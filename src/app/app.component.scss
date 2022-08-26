@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+
+:root {
+  --color-basic: #FFFFFF;
+  --color-background: #87B738;
+  --color-text: #FFDF5C;
+}
+
+.eventName {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 61.6px;
+  line-height: 84px;
+  color: #FFDF5C;
+}
+
+.countdownToEvent {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 76.5px;
+  line-height: 104px;
+  color: #FFDF5C;
+}
