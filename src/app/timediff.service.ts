@@ -4,7 +4,9 @@ import { timeI } from './core/timeI'
 // eventDate = Jun 24 2023
 
 // TODO: change strictly typed date
-export function calcDateDiff(eventDate: Date = new Date(2023, 0o5, 24)): timeI {
+export function calcDateDiff(eventDate: Date = new Date('2023-06-24')): timeI {
+  // JavaScript will (by default) output dates in full text string format - e.g. Wed Mar 25 2015 01:00:00 GMT+0100 (Central European Standard Time)
+
   // ----- Time values -----
   const hoursInDay = 24
   const minutesInHour = 60
@@ -30,6 +32,8 @@ export function calcDateDiff(eventDate: Date = new Date(2023, 0o5, 24)): timeI {
   const secondsToEvent = Math.floor(
     (timeDiff / millisecondsInSecond) % secondsInMinute,
   )
+
+  // console.log(eventDate)
 
   // TODO: remove console log
   // console.log(

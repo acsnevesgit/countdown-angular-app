@@ -13,8 +13,8 @@ import { calcDateDiff } from './timediff.service'
 })
 export class AppComponent {
   title = 'natural-cycles-FE-challenge'
-  eventName: string = 'Midsummer Eve'
-  eventDate: string = '2023-06-24'
+  public eventName: string = 'Midsummer Eve'
+  public eventDate: string = '2023-06-24'
 
   constructor() {
     // uses pipe to change the observable
@@ -24,10 +24,16 @@ export class AppComponent {
     )
   }
 
+  // Using an Angular event: will trigger with each input change
   onEventChangeFn(value: string) {
     this.eventName = value
-    console.log('modelchanged ' + value)
+    console.log('event changed ' + value)
   }
+
+  // Alternatively, using a DOM event: will only fire when the user has blurred the input
+  // changeFn(event: { target: { value: string } }) {
+  //   this.eventName = event.target.value
+  // }
 
   public timeRemaining$: Observable<timeI>
 }

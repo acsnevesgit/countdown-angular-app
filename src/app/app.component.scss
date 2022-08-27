@@ -1,32 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
-:root {
-  --color-basic: #FFFFFF;
-  --color-background: #87B738;
-  --color-text: #FFDF5C;
-}
-
 .eventName {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
   font-size: 61.6px;
   line-height: 84px;
-  color: #FFDF5C;
+  color: var(--color-text);
+  margin-bottom: 5px;
+  // white-space: nowrap;
 }
 
 .countdownToEvent {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  font-size: 76.5px;
+  font-size: min(100vw, 76.5px);
   line-height: 104px;
+  color: var(--color-text);
   margin-bottom: 30px;
-  color: #FFDF5C;
-}
-
-.inputField {
-  font-family: 'Open Sans';
+  // white-space: nowrap;
 }
 
 .inputLabel {
@@ -35,13 +28,23 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: #FFFFFF;
+  color: var(--color-basic);
+}
+
+.inputField {
+  font-family: 'Open Sans';
+  justify-content: space-between;
+  width: 300px;
+  height: 67px;
 }
 
 .eventField {
-  margin-right: 14px;
+  padding-bottom: 24px;
+  // padding-right: 28px ;
 }
 
-.dateField {
-  margin-left: 14px;
+// ----------- media queries -----------
+
+@media screen and (orientation: portrait) {
+
 }

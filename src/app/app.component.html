@@ -12,7 +12,11 @@
     >s
   </div>
   <div class="inputText">
-    <mat-form-field class="inputField eventField" appearance="outline">
+    <mat-form-field
+      class="inputField eventField mat-focused"
+      appearance="outline"
+      floatLabel="always"
+    >
       <mat-label class="inputLabel">Title</mat-label>
       <input
         matInput
@@ -21,11 +25,23 @@
         type="text"
         ngModel="{{ eventName }}"
         (ngModelChange)="onEventChangeFn($event)"
+        placeholder="event title"
       />
     </mat-form-field>
-    <mat-form-field class="inputField dateField" appearance="outline">
+    <mat-form-field
+      class="inputField dateField mat-focused"
+      appearance="outline"
+      floatLabel="always"
+    >
       <mat-label class="inputLabel">Date</mat-label>
-      <input matInput class="eventDate" value="{{ eventDate }}" type="text" />
+      <input
+        matInput
+        class="eventDate"
+        type="text"
+        value="{{ eventDate }}"
+        pattern="yyyy-mm-dd"
+        placeholder="yyyy-mm-dd"
+      />
     </mat-form-field>
   </div>
 </div>
