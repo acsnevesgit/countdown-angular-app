@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { interval, Observable } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
+
 import { timeI } from './core/timeI'
 import { calcDateDiff } from './timediff.service'
 
@@ -12,6 +13,8 @@ import { calcDateDiff } from './timediff.service'
 })
 export class AppComponent {
   title = 'natural-cycles-FE-challenge'
+  eventName: string = 'Midsummer Eve'
+  eventDate: string = '2023-06-24'
 
   constructor() {
     // uses pipe to change the observable
@@ -19,6 +22,11 @@ export class AppComponent {
       map((x) => calcDateDiff()),
       shareReplay(1),
     )
+  }
+
+  onEventChangeFn(value: string) {
+    this.eventName = value
+    console.log('modelchanged ' + value)
   }
 
   public timeRemaining$: Observable<timeI>

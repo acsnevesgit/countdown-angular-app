@@ -3,12 +3,30 @@
 <!-- <app-countdown> </app-countdown> -->
 
 <div class="timeToEvent" *ngIf="timeRemaining$ | async as t; else loading">
-  <h3 class="eventName">Time to Midsummer Eve</h3>
+  <h3 class="eventName">Time to {{ eventName }}</h3>
   <div class="countdownToEvent">
-    <span id="days">{{ t.daysToEvent }}</span> days
-    <span id="hours">{{ t.hoursToEvent }}</span> h
-    <span id="minutes">{{ t.minutesToEvent }}</span> m
-    <span id="seconds">{{ t.secondsToEvent }}</span> s
+    <span id="days">{{ t.daysToEvent }}</span> days,
+    <span id="hours">{{ t.hoursToEvent }}</span
+    >h, <span id="minutes">{{ t.minutesToEvent }}</span
+    >m, <span id="seconds">{{ t.secondsToEvent }}</span
+    >s
+  </div>
+  <div class="inputText">
+    <mat-form-field class="inputField eventField" appearance="outline">
+      <mat-label class="inputLabel">Title</mat-label>
+      <input
+        matInput
+        class="eventTitle"
+        value="{{ eventName }}"
+        type="text"
+        ngModel="{{ eventName }}"
+        (ngModelChange)="onEventChangeFn($event)"
+      />
+    </mat-form-field>
+    <mat-form-field class="inputField dateField" appearance="outline">
+      <mat-label class="inputLabel">Date</mat-label>
+      <input matInput class="eventDate" value="{{ eventDate }}" type="text" />
+    </mat-form-field>
   </div>
 </div>
 
