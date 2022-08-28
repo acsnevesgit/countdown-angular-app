@@ -4,7 +4,7 @@ import { interval, Observable } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
 
 import { timeI } from './core/timeI'
-import { calcDateDiff } from './timediff.service'
+import { DateDiff } from './timediff.service'
 
 @Component({
   selector: 'app-root',
@@ -12,27 +12,24 @@ import { calcDateDiff } from './timediff.service'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  // ------------------------------ Variable declarations ------------------------------
+  // ------------------------------ Variables ------------------------------
   title: string = 'natural-cycles-FE-challenge'
-  eventNameControl: FormControl
-  eventDateControl: FormControl
+
   eventName: string
   eventDate: string
+  eventNameControl: FormControl
+  eventDateControl: FormControl
+
   public timeRemaining$: Observable<timeI>
 
-  constructor() {
-    // ------------------------------ Variable initializations ------------------------------
+  constructor(private dateDiffService: DateDiff) {
     this.eventName = 'Midsummer Eve'
     this.eventDate = '2023-06-24'
-    this.eventNameControl = new FormControl(
-      'Midsummer Eve',
-      Validators.required,
-    )
-    this.eventDateControl = new FormControl('2023-06-24', Validators.required)
+    this.eventNameControl = new FormControl('', Validators.required)
+    this.eventDateControl = new FormControl('', Validators.required)
 
-    // uses pipe to change the observable
     this.timeRemaining$ = interval(1000).pipe(
-      map((x) => calcDateDiff()),
+      map((x) => this.dateDiffService.calcDateDiff(new Date(this.eventDate))),
       shareReplay(1),
     )
   }

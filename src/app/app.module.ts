@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
+import { DateDiff } from './timediff.service'
 
 // Contains metadata like components, service providers, and other code files whose scope is here defined
 // Can import functionality that is exported from other NgModules, and export selected functionality for use by other NgModules
@@ -22,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module'
     ReactiveFormsModule,
   ],
   exports: [],
-  providers: [], // services to become accessible in all parts of the application
+  providers: [DateDiff], // services to become accessible in all parts of the application
   bootstrap: [AppComponent], // main application view that hosts all the other application views
 })
 export class AppModule {}
