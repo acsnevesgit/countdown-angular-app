@@ -1,7 +1,3 @@
-<!-- TODO: move to own countdown component -->
-<!-- Inject the app-countdown child component into the app.component.html parent -->
-<!-- <app-countdown> </app-countdown> -->
-
 <div class="timeToEvent" *ngIf="timeRemaining$ | async as t; else loading">
   <h3 class="eventName">Time to {{ eventName }}</h3>
   <div class="countdownToEvent">
@@ -11,40 +7,49 @@
     >m, <span id="seconds">{{ t.secondsToEvent }}</span
     >s
   </div>
-  <div class="inputText">
+  <div class="inputForms">
     <mat-form-field
       class="inputField eventField mat-focused"
       appearance="outline"
       floatLabel="always"
+      hideRequiredMarker
     >
       <mat-label class="inputLabel">Title</mat-label>
       <input
         matInput
-        class="eventTitle"
-        value="{{ eventName }}"
         type="text"
+        [formControl]="eventNameControl"
+        value="{{ eventName }}"
         ngModel="{{ eventName }}"
-        (ngModelChange)="onEventChangeFn($event)"
-        placeholder="event title"
+        (ngModelChange)="onEventNameChangeFn($event)"
+        placeholder="event name"
       />
+      <mat-error *ngIf="eventNameControl.invalid"
+        >Please name the event
+      </mat-error>
     </mat-form-field>
     <mat-form-field
-      class="inputField dateField mat-focused"
+      class="form-group inputField eventField mat-focused"
       appearance="outline"
       floatLabel="always"
+      hideRequiredMarker
     >
       <mat-label class="inputLabel">Date</mat-label>
       <input
         matInput
-        class="eventDate"
         type="text"
+        [formControl]="eventDateControl"
+        required
         value="{{ eventDate }}"
-        pattern="yyyy-mm-dd"
+        ngModel="{{ eventDate }}"
+        (ngModelChange)="onEventDateChangeFn($event)"
         placeholder="yyyy-mm-dd"
       />
+      <mat-error *ngIf="eventDateControl.invalid"
+        >Please date the event in the format yyyy-mm-dd
+      </mat-error>
     </mat-form-field>
   </div>
 </div>
 
-<!-- TODO: add error template -->
 <ng-template #loading> Loading... </ng-template>
