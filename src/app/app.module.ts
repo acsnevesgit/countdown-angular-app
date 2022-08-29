@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms' // for 2-way binding -> used to share the data from component to template and vice versa
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { NgModule } from '@angular/core'
@@ -8,11 +8,10 @@ import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
 import { DateDiff } from './timediff.service'
+import { StorageService } from './storage.service'
 
-// Contains metadata like components, service providers, and other code files whose scope is here defined
-// Can import functionality that is exported from other NgModules, and export selected functionality for use by other NgModules
 @NgModule({
-  declarations: [AppComponent], // components, directives, and pipes that belong to this NgModule
+  declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -23,7 +22,7 @@ import { DateDiff } from './timediff.service'
     ReactiveFormsModule,
   ],
   exports: [],
-  providers: [DateDiff], // services to become accessible in all parts of the application
-  bootstrap: [AppComponent], // main application view that hosts all the other application views
+  providers: [DateDiff, StorageService],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

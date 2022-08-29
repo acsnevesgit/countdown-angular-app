@@ -6,6 +6,7 @@ import { DateValidator } from './shared/date.validator'
 
 import { timeI } from './core/timeI'
 import { DateDiff } from './timediff.service'
+import { StorageService } from './storage.service'
 
 @Component({
   selector: 'app-root',
@@ -25,9 +26,17 @@ export class AppComponent {
   constructor(
     private formBuilder: FormBuilder,
     private dateDiffService: DateDiff,
+    private storageService: StorageService,
   ) {
-    this.eventName = 'Midsummer Eve'
-    this.eventDate = '2023-06-24'
+    if (!this.storageService.getData('eventName')) {
+      this.storageService.setData('eventName', 'Midsummer Eve')
+    }
+    if (!this.storageService.getData('eventDate')) {
+      this.storageService.setData('eventDate', '2023-06-24')
+    }
+
+    this.eventName = JSON.parse(localStorage.getItem('eventName') as string)
+    this.eventDate = JSON.parse(localStorage.getItem('eventDate') as string)
 
     // ------------------------------ Validation ------------------------------
     this.eventValidations = this.formBuilder.group({
@@ -56,14 +65,14 @@ export class AppComponent {
     )
   }
 
-  // ------------------------------ Methods--------------------------------------------------
+  // -------------------------------------------------- Methods--------------------------------------------------
   onEventNameChangeFn(value: string) {
     this.eventName = value
-    console.log('event name has changed: ' + value)
+    this.storageService.setData('eventName', value)
   }
 
   onEventDateChangeFn(value: string) {
     this.eventDate = value
-    console.log('event date has changed: ' + value)
+    this.storageService.setData('eventDate', value)
   }
 }
