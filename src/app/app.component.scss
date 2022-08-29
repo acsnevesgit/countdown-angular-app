@@ -34,8 +34,14 @@
   display: flex;
 }
 
+.wrapper {
+  white-space: nowrap;
+  position: absolute;
+}
+
 // ------------------------------ media queries ------------------------------
-@media screen and (orientation: landscape) {
+// ----------- mobile and tablet? -----------
+@media screen and (orientation: landscape) and (max-width: 1023px) {
   .eventName {
     line-height: 84px;
     margin-bottom: 5px;
@@ -55,8 +61,6 @@
     margin-right: 28px;
   }
   .wrapper {
-    white-space: nowrap;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -83,10 +87,38 @@
     margin-right: none;
   }
   .wrapper {
-    white-space: nowrap;
-    position: absolute;
     top: 286px;
     left: 50%;
     transform: translateX(-50%);
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+  }
+}
+
+// ----------- desktop -----------
+@media screen and (min-width: 1024px) {
+  .eventName {
+    line-height: 84px;
+    margin-bottom: 5px;
+    font-size: 0.075 * 1024px;
+  }
+  .countdownToEvent {
+    line-height: 104px;
+    margin-bottom: 30px;
+    font-size: 0.088 * 1024px;
+  }
+  .inputForms {
+    flex-direction: row;
+    place-content: center;
+  }
+  .eventNameField {
+    margin-bottom: none;
+    margin-right: 28px;
+  }
+  .wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
