@@ -53,3 +53,16 @@ body {
   line-height: initial;
   text-align: center ;
 }
+
+// ------------------------------ media queries ------------------------------
+@media screen and (orientation: landscape) {
+  body {
+    margin: 0 40px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    margin: 0 16px;
+  }
+}

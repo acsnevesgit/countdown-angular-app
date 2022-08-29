@@ -4,22 +4,14 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
-  // font-size: 61.6px;
-  font-size: min(61.6px, 8vw);
-  line-height: 84px;
   color: var(--color-text);
-  margin-bottom: 5px;
 }
 
 .countdownToEvent {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  // font-size: 76.5px;
-  font-size: min(76.5px, 8vw);
-  line-height: 104px;
   color: var(--color-text);
-  margin-bottom: 30px;
 }
 
 .inputLabel {
@@ -42,16 +34,19 @@
   display: flex;
 }
 
-.wrapper {
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 // ------------------------------ media queries ------------------------------
 @media screen and (orientation: landscape) {
+  .eventName {
+    line-height: 84px;
+    margin-bottom: 5px;
+    font-size: max(28.8px, 7.5vw);
+  }
+  .countdownToEvent {
+    line-height: 104px;
+    margin-bottom: 30px;
+    font-size: max(35.8px, 8.8vw);
+  }
+
   .inputForms {
     flex-direction: row;
     place-content: center;
@@ -60,9 +55,26 @@
     margin-bottom: none;
     margin-right: 28px;
   }
+  .wrapper {
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media screen and (orientation: portrait) {
+  .eventName {
+    line-height: 39px;
+    margin-bottom: 16px;
+    font-size: min(61.6px, 7.5vw);
+  }
+  .countdownToEvent {
+    line-height: 49px;
+    margin-bottom: 232px;
+    font-size: min(76.5px, 8.8vw);
+  }
   .inputForms {
     flex-direction: column;
     place-items: center;
@@ -70,5 +82,12 @@
   .eventNameField {
     margin-bottom: 24px;
     margin-right: none;
+  }
+  .wrapper {
+    white-space: nowrap;
+    position: absolute;
+    top: 286px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
