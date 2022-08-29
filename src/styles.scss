@@ -25,7 +25,8 @@ $natural-cycles-FE-challenge-theme: mat.define-light-theme((
 }
 
 html, body {
-  height: 100%;
+  // height: 100%;
+  // width: 100%;
 }
 
 body {
@@ -48,5 +49,7 @@ body {
 }
 
 .mat-error {
-  color: var(--color-basic) !important;
+  color: var(--color-basic);
+  line-height: initial;
+  text-align: center ;
 }

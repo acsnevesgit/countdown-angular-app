@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing'
 
-import { TimediffService } from './timediff.service'
+import { DateDiff } from './timediff.service'
 
 describe('TimediffService', () => {
-  let service: TimediffService
+  let service: DateDiff
 
   beforeEach(() => {
     TestBed.configureTestingModule({})
-    service = TestBed.inject(TimediffService)
+    service = TestBed.inject(DateDiff)
   })
 
   it('should be created', () => {

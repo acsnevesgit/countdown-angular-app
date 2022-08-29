@@ -4,7 +4,8 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
-  font-size: 61.6px;
+  // font-size: 61.6px;
+  font-size: min(61.6px, 8vw);
   line-height: 84px;
   color: var(--color-text);
   margin-bottom: 5px;
@@ -14,7 +15,8 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  font-size: min(100vw, 76.5px);
+  // font-size: 76.5px;
+  font-size: min(76.5px, 8vw);
   line-height: 104px;
   color: var(--color-text);
   margin-bottom: 30px;
@@ -36,12 +38,37 @@
   height: 67px;
 }
 
-.eventField {
-  padding-bottom: 24px;
-  padding-right: 28px;
+.inputForms {
+  display: flex;
+}
+
+.wrapper {
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 // ------------------------------ media queries ------------------------------
-@media screen and (orientation: portrait) {
+@media screen and (orientation: landscape) {
+  .inputForms {
+    flex-direction: row;
+    place-content: center;
+  }
+  .eventNameField {
+    margin-bottom: none;
+    margin-right: 28px;
+  }
+}
 
+@media screen and (orientation: portrait) {
+  .inputForms {
+    flex-direction: column;
+    place-items: center;
+  }
+  .eventNameField {
+    margin-bottom: 24px;
+    margin-right: none;
+  }
 }
