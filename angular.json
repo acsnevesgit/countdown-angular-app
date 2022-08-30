@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "natural-cycles-FE-challenge": {
+    "countdown-angular-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/natural-cycles-fe-challenge",
+            "outputPath": "dist/countdown-angular-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "natural-cycles-FE-challenge:build:production"
+              "browserTarget": "countdown-angular-app:build:production"
             },
             "development": {
-              "browserTarget": "natural-cycles-FE-challenge:build:development"
+              "browserTarget": "countdown-angular-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "natural-cycles-FE-challenge:build"
+            "browserTarget": "countdown-angular-app:build"
           }
         },
         "test": {

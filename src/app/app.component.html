@@ -1,11 +1,13 @@
 <div class="wrapper" *ngIf="timeRemaining$ | async as t; else loading">
-  <p class="eventName">Time to {{ eventName }}</p>
-  <div class="countdownToEvent">
-    <span id="days">{{ t.daysToEvent }}</span> days,
-    <span id="hours">{{ t.hoursToEvent }}</span
-    >h, <span id="minutes">{{ t.minutesToEvent }}</span
-    >m, <span id="seconds">{{ t.secondsToEvent }}</span
-    >s
+  <div class="eventInfo">
+    <p class="eventName">Time to {{ eventName }}</p>
+    <div class="countdownToEvent">
+      <span id="days">{{ t.daysToEvent }}</span> days,
+      <span id="hours">{{ t.hoursToEvent }}</span
+      >h, <span id="minutes">{{ t.minutesToEvent }}</span
+      >m, <span id="seconds">{{ t.secondsToEvent }}</span
+      >s
+    </div>
   </div>
   <div class="inputForms" [formGroup]="eventValidations">
     <mat-form-field

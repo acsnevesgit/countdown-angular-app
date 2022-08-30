@@ -7,8 +7,8 @@ import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
-import { DateDiff } from './timediff.service'
-import { StorageService } from './storage.service'
+import { DateDiff } from './services/timediff.service'
+import { StorageService } from './services/storage.service'
 
 @NgModule({
   declarations: [AppComponent],

@@ -16,10 +16,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy()
   })
 
-  it(`should have as title 'natural-cycles-FE-challenge'`, () => {
+  it(`should have as title 'countdown-angular-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent)
     const app = fixture.componentInstance
-    expect(app.title).toEqual('natural-cycles-FE-challenge')
+    expect(app.title).toEqual('countdown-angular-app')
   })
 
   it('should render title', () => {
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     fixture.detectChanges()
     const compiled = fixture.nativeElement as HTMLElement
     expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'natural-cycles-FE-challenge app is running!',
+      'countdown-angular-app app is running!',
     )
   })
 })

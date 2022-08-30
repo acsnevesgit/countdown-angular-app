@@ -5,8 +5,8 @@ import { map, shareReplay } from 'rxjs/operators'
 import { DateValidator } from './validators/date.validator'
 
 import { timeI } from './core/timeI'
-import { DateDiff } from './timediff.service'
-import { StorageService } from './storage.service'
+import { DateDiff } from './services/timediff.service'
+import { StorageService } from './services/storage.service'
 
 @Component({
   selector: 'app-root',
