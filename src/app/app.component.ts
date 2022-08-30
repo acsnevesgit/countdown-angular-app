@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { interval, Observable } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
-import { DateValidator } from './shared/date.validator'
+import { DateValidator } from './validators/date.validator'
 
 import { timeI } from './core/timeI'
 import { DateDiff } from './timediff.service'
@@ -15,7 +15,7 @@ import { StorageService } from './storage.service'
 })
 export class AppComponent {
   // ------------------------------ Variables ------------------------------
-  title: string = 'natural-cycles-FE-challenge'
+  title: string = 'countdown-angular-app'
 
   eventName: string
   eventDate: string
