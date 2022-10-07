@@ -1,0 +1,16 @@
+<mat-form-field
+  class="input-field input-event-name mat-focused"
+  appearance="outline"
+  floatLabel="always"
+  hideRequiredMarker
+>
+  <mat-label class="input-label">Title</mat-label>
+  <input
+    matInput
+    type="text"
+    value="{{ eventName }}"
+    ngModel="{{ eventName }}"
+    (ngModelChange)="onEventNameChangeFn($event.target.value)"
+    placeholder="event name"
+  />
+</mat-form-field>

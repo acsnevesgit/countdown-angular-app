@@ -5,9 +5,18 @@ import { Injectable } from '@angular/core'
 })
 export class StorageService {
   // -------------------------------------------------- Methods--------------------------------------------------
-  setData(key: string, value: string) {
+  setBool(key: string, value: boolean) {
+    localStorage.setItem(key, String(value))
+  }
+
+  getBool(key: string): boolean {
+    return localStorage.getItem(key) === 'true'
+  }
+
+  setData(key: string, value: any) {
     localStorage.setItem(key, JSON.stringify(value))
   }
+
   getData(key: string): any {
     return JSON.parse(localStorage.getItem(key) as string)
   }

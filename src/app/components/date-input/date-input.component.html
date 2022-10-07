@@ -1,0 +1,23 @@
+<mat-form-field
+  class="input-field input-event-date mat-focused"
+  appearance="outline"
+  floatLabel="always"
+  hideRequiredMarker
+>
+  <mat-label class="input-label">Date</mat-label>
+  <input
+    matInput
+    [matDatepicker]="eventSatePicker"
+    disabled
+    value="{{ eventDate }}"
+    ngModel="{{ eventDate }}"
+    (ngModelChange)="onEventDateChangeFn($event)"
+  />
+  <!-- <mat-hint class="datepicker-hint">MM/DD/YYYY</mat-hint> -->
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="eventSatePicker"
+    [disabled]="false"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #eventSatePicker [disabled]="false"></mat-datepicker>
+</mat-form-field>

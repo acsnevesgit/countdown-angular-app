@@ -9,68 +9,9 @@
       >s
     </h2>
   </div>
-  <div class="input-form" [formGroup]="eventValidations">
-    <mat-form-field
-      class="input-field input-event-name mat-focused"
-      appearance="outline"
-      floatLabel="always"
-      hideRequiredMarker
-    >
-      <mat-label class="input-label">Title</mat-label>
-      <input
-        matInput
-        type="text"
-        formControlName="eventNameControl"
-        value="{{ eventName }}"
-        ngModel="{{ eventName }}"
-        (ngModelChange)="onEventNameChangeFn($event)"
-        placeholder="event name"
-      />
-      <mat-error
-        *ngIf="eventValidations.get('eventNameControl')?.hasError('required')"
-        >Please enter a name for the event
-      </mat-error>
-      <mat-error
-        *ngIf="eventValidations.get('eventNameControl')?.hasError('minlength')"
-        >Please enter a name that is more than 3 characters
-      </mat-error>
-      <mat-error
-        *ngIf="eventValidations.get('eventNameControl')?.hasError('maxlength')"
-        >Please enter a name that is less than 14 characters long
-      </mat-error>
-      <mat-error
-        *ngIf="eventValidations.get('eventNameControl')?.hasError('pattern')"
-        >Please enter a name that only has a-z, A-Z, 0-9 or spaces
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field
-      class="input-field input-event-date mat-focused"
-      appearance="outline"
-      floatLabel="always"
-      hideRequiredMarker
-    >
-      <mat-label class="input-label">Date</mat-label>
-      <input
-        matInput
-        type="text"
-        formControlName="eventDateControl"
-        value="{{ eventDate }}"
-        ngModel="{{ eventDate }}"
-        (ngModelChange)="onEventDateChangeFn($event)"
-        placeholder="yyyy-mm-dd"
-        autocomplete="off"
-      />
-      <mat-error
-        *ngIf="eventValidations.get('eventDateControl')?.hasError('required')"
-        >Please enter a date for the event
-      </mat-error>
-      <mat-error
-        *ngIf="
-          eventValidations.get('eventDateControl')?.hasError('dateValidator')
-        "
-        >Please enter a date in the format yyyy-mm-dd
-      </mat-error>
-    </mat-form-field>
+  <div class="input-form">
+    <app-name-input></app-name-input>
+    <app-date-input></app-date-input>
   </div>
 </div>
 
