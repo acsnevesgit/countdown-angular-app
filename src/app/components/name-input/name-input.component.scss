@@ -13,6 +13,12 @@
   min-width: 300px;
 }
 
+.mat-error {
+  color: var(--color-warning) !important;
+  font-size: 1.4em;
+  margin-top: 1em;
+}
+
 .mat-form-field {
   margin: 1em;
 }

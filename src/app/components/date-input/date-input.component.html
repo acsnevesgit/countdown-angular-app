@@ -12,8 +12,8 @@
     value="{{ eventDate }}"
     ngModel="{{ eventDate }}"
     (ngModelChange)="onEventDateChangeFn($event)"
+    placeholder="Event Date"
   />
-  <!-- <mat-hint class="datepicker-hint">MM/DD/YYYY</mat-hint> -->
   <mat-datepicker-toggle
     matSuffix
     [for]="eventSatePicker"
