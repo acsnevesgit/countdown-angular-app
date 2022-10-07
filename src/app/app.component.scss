@@ -1,124 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
-.eventName {
-  font-family: 'Open Sans';
+.event-info {
+  color: var(--color-text);
+  font-family: "Roboto", sans-serif;
   font-style: normal;
+  margin: 2em 0;
+  width: 100%;
+}
+
+.event-name {
+  font-size: 6vw;
   font-weight: 800;
-  color: var(--color-text);
+  line-height: 7vw;
+  margin: 0.5em;
 }
 
-.countdownToEvent {
-  font-family: 'Open Sans';
-  font-style: normal;
+.event-countdown {
+  font-size: 5.5vw;
   font-weight: 400;
-  color: var(--color-text);
+  line-height: 7vw;
+  margin: 0.5em;
 }
 
-.inputLabel {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+.input-label {
   color: var(--color-basic);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
 }
 
-.inputField {
-  font-family: 'Open Sans';
-  justify-content: space-between;
-  width: 300px;
+.input-field {
   height: 67px;
+  justify-content: space-between;
+  width: 32vw;
+  min-width: 300px;
 }
 
-.inputForms {
+.input-form {
   display: flex;
+  justify-content: center;
+}
+
+.mat-form-field {
+  margin: 1em;
 }
 
 .wrapper {
+  font-family: 'Open Sans';
+  margin: 2em;
   white-space: nowrap;
-  position: absolute;
 }
 
 // ------------------------------ media queries ------------------------------
-// ----------- mobile and tablet? -----------
-@media screen and (orientation: landscape) and (max-width: 1023px) {
-  .eventName {
-    line-height: 84px;
-    margin-bottom: 5px;
-    font-size: max(28.8px, 7.5vw);
-  }
-  .countdownToEvent {
-    line-height: 104px;
-    margin-bottom: 30px;
-    font-size: max(35.8px, 8.8vw);
-  }
-  .inputForms {
-    flex-direction: row;
-    place-content: center;
-  }
-  .eventNameField {
-    margin-bottom: none;
-    margin-right: 28px;
-  }
-  .wrapper {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-@media screen and (orientation: portrait) {
-  .eventName {
-    line-height: 39px;
-    margin-bottom: 16px;
-    font-size: min(61.6px, 7.5vw);
-  }
-  .countdownToEvent {
-    line-height: 49px;
-    margin-bottom: 232px;
-    font-size: min(76.5px, 8.8vw);
-  }
-  .inputForms {
+@media screen and (max-width: 768px) {
+  .input-form {
+    align-items: center;
     flex-direction: column;
-    place-items: center;
-  }
-  .eventNameField {
-    margin-bottom: 24px;
-    margin-right: none;
-  }
-  .wrapper {
-    top: 286px;
-    left: 50%;
-    transform: translateX(-50%);
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
   }
 }
+// @media screen and (orientation: landscape) and (max-width: 1023px) {
+//   .event-name {
+//     line-height: 84px;
+//     margin-bottom: 5px;
+//     font-size: max(28.8px, 7.5vw);
+//   }
+//   .event-countdown {
+//     line-height: 104px;
+//     margin-bottom: 30px;
+//     font-size: max(35.8px, 8.8vw);
+//   }
+//   .input-form {
+//     flex-direction: row;
+//     place-content: center;
+//   }
+//   .input-event-name {
+//     margin-bottom: none;
+//     margin-right: 28px;
+//   }
+//   .wrapper {
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+// }
 
-// ----------- desktop -----------
-@media screen and (min-width: 1024px) {
-  .eventName {
-    line-height: 84px;
-    margin-bottom: 5px;
-    font-size: 0.075 * 1024px;
-  }
-  .countdownToEvent {
-    line-height: 104px;
-    margin-bottom: 30px;
-    font-size: 0.088 * 1024px;
-  }
-  .inputForms {
-    flex-direction: row;
-    place-content: center;
-  }
-  .eventNameField {
-    margin-bottom: none;
-    margin-right: 28px;
-  }
-  .wrapper {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
+// @media screen and (orientation: portrait) {
+//   .event-name {
+//     line-height: 39px;
+//     margin-bottom: 16px;
+//     font-size: min(61.6px, 7.5vw);
+//   }
+//   .event-countdown {
+//     line-height: 49px;
+//     margin-bottom: 232px;
+//     font-size: min(76.5px, 8.8vw);
+//   }
+//   .input-form {
+//     flex-direction: column;
+//     place-items: center;
+//   }
+//   .input-event-name {
+//     margin-bottom: 24px;
+//     margin-right: none;
+//   }
+//   .wrapper {
+//     top: 286px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     // top: 50%;
+//     // left: 50%;
+//     // transform: translate(-50%, -50%);
+//   }
+// }
+
+// // ----------- desktop -----------
+// @media screen and (min-width: 1024px) {
+//   .event-name {
+//     line-height: 84px;
+//     margin-bottom: 5px;
+//     font-size: 0.075 * 1024px;
+//   }
+//   .event-countdown {
+//     line-height: 104px;
+//     margin-bottom: 30px;
+//     font-size: 0.088 * 1024px;
+//   }
+//   .input-form {
+//     flex-direction: row;
+//     place-content: center;
+//   }
+//   .input-event-name {
+//     margin-bottom: none;
+//     margin-right: 28px;
+//   }
+//   .wrapper {
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+// }

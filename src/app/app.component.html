@@ -1,22 +1,22 @@
 <div class="wrapper" *ngIf="timeRemaining$ | async as t; else loading">
-  <div class="eventInfo">
-    <p class="eventName">Time to {{ eventName }}</p>
-    <div class="countdownToEvent">
+  <div class="event-info">
+    <h1 class="event-name">Time to {{ eventName }}</h1>
+    <h2 class="event-countdown">
       <span id="days">{{ t.daysToEvent }}</span> days,
       <span id="hours">{{ t.hoursToEvent }}</span
       >h, <span id="minutes">{{ t.minutesToEvent }}</span
       >m, <span id="seconds">{{ t.secondsToEvent }}</span
       >s
-    </div>
+    </h2>
   </div>
-  <div class="inputForms" [formGroup]="eventValidations">
+  <div class="input-form" [formGroup]="eventValidations">
     <mat-form-field
-      class="inputField eventNameField mat-focused"
+      class="input-field input-event-name mat-focused"
       appearance="outline"
       floatLabel="always"
       hideRequiredMarker
     >
-      <mat-label class="inputLabel">Title</mat-label>
+      <mat-label class="input-label">Title</mat-label>
       <input
         matInput
         type="text"
@@ -44,12 +44,12 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field
-      class="form-group inputField mat-focused"
+      class="input-field input-event-date mat-focused"
       appearance="outline"
       floatLabel="always"
       hideRequiredMarker
     >
-      <mat-label class="inputLabel">Date</mat-label>
+      <mat-label class="input-label">Date</mat-label>
       <input
         matInput
         type="text"

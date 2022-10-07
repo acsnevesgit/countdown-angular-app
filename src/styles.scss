@@ -20,17 +20,28 @@ $countdown-angular-app-theme: mat.define-light-theme((
 :root {
   --color-basic: #FFFFFF;
   --color-transp: #f0f0f080;
-  --color-background: #87B738;
+  --color-background: #02005e;
   --color-text: #FFDF5C;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
-  // height: 100%;
-  // width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  place-content: center;
 }
 
 body {
-  margin: 60px 40px;
   font-family: "Open Sans", Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--color-background);
   text-align: center;
@@ -56,13 +67,9 @@ body {
 
 // ------------------------------ media queries ------------------------------
 @media screen and (orientation: landscape) {
-  body {
-    margin: 0 40px;
-  }
+
 }
 
 @media screen and (orientation: portrait) {
-  body {
-    margin: 0 16px;
-  }
+
 }
