@@ -10,8 +10,8 @@
     </h2>
   </div>
   <div class="input-form">
-    <app-name-input></app-name-input>
-    <app-date-input></app-date-input>
+    <app-name-input (newEventName)="addNewEventName($event)"></app-name-input>
+    <app-date-input (newEventDate)="addNewEventDate($event)"></app-date-input>
   </div>
 </div>
 

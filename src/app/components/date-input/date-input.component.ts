@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core'
 
 import { StorageService } from '../../services/storage.service'
 
@@ -10,16 +10,24 @@ import { StorageService } from '../../services/storage.service'
 export class DateInputComponent {
   // ------------------------------ Variables ------------------------------
   eventDate: string
+  startDate: Date
+
+  @Output() newEventDate = new EventEmitter<string>()
 
   constructor(private storageService: StorageService) {
+    this.startDate = new Date('2023-06-23T22:00:00.000Z') //default event date
+
     if (!this.storageService.getData('eventDate')) {
-      this.storageService.setData('eventDate', new Date('06/24/2023'))
+      this.storageService.setData('eventDate', this.startDate)
     }
     this.eventDate = JSON.parse(localStorage.getItem('eventDate') as string)
   }
+
   // ------------------------------ Methods ------------------------------
   onEventDateChangeFn(value: string) {
     this.eventDate = value
-    this.storageService.setData('eventDate', value)
+    this.storageService.setData('eventDate', new Date(value))
+    this.eventDate = JSON.parse(localStorage.getItem('eventDate') as string)
+    this.newEventDate.emit(value)
   }
 }

@@ -8,11 +8,9 @@
   <input
     matInput
     type="text"
-    [formControl]="eventNameControl"
     value="{{ eventName }}"
     ngModel="{{ eventName }}"
     (ngModelChange)="onEventNameChangeFn($event)"
     placeholder="Event Name"
   />
-  <mat-error *ngIf="eventNameControl.invalid">Invalid Event Name.</mat-error>
 </mat-form-field>

@@ -8,7 +8,7 @@ This app was built using the latest stable versions of Angular and Typescript. A
 
 <br>
 
-In this app the user can define the end date and the name of the event taking place on that day. The countdown should always start from the current time and it should display the time remaining to the specified end date in the following format: Days, Hours(h), Minutes(m), Seconds(s) (e.g., 3 days, 15 h, 20 m, 5 s). To make sure the text always covers the entire screen width, it should resize whenever necessary to achieve this objective.
+In this app the user can define the end date and the name of the event taking place on that day. The countdown should always start from the current time and it should display the time remaining to the specified end date in the following format: Days, Hours(h), Minutes(m), Seconds(s) (e.g., 3 days, 15 h, 20 m, 5 s).
 
 </div>
 

@@ -7,7 +7,7 @@
   <mat-label class="input-label">Date</mat-label>
   <input
     matInput
-    [matDatepicker]="eventSatePicker"
+    [matDatepicker]="eventDatePicker"
     disabled
     value="{{ eventDate }}"
     ngModel="{{ eventDate }}"
@@ -16,8 +16,8 @@
   />
   <mat-datepicker-toggle
     matSuffix
-    [for]="eventSatePicker"
+    [for]="eventDatePicker"
     [disabled]="false"
   ></mat-datepicker-toggle>
-  <mat-datepicker #eventSatePicker [disabled]="false"></mat-datepicker>
+  <mat-datepicker #eventDatePicker [disabled]="false"></mat-datepicker>
 </mat-form-field>
