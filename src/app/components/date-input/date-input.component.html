@@ -4,7 +4,7 @@
   floatLabel="always"
   hideRequiredMarker
 >
-  <mat-label class="input-label">Date</mat-label>
+  <mat-label class="input-label">Event Date</mat-label>
   <input
     matInput
     [matDatepicker]="eventDatePicker"
@@ -16,7 +16,8 @@
     required
     [min]="minDate"
   />
-  <mat-hint>MM/DD/YYYY</mat-hint>
+  <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+  <mat-hint>{{ getDateFormatString() }}</mat-hint>
   <mat-datepicker-toggle
     matSuffix
     [for]="eventDatePicker"
@@ -24,3 +25,7 @@
   ></mat-datepicker-toggle>
   <mat-datepicker #eventDatePicker [disabled]="false"></mat-datepicker>
 </mat-form-field>
+<diV class="timezone-buttons">
+  <button mat-flat-button (click)="swedish()">Swedish Time</button>
+  <button mat-flat-button (click)="unitedKingdom()">UK Time</button>
+</diV>
