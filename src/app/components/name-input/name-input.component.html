@@ -7,10 +7,14 @@
   <mat-label class="input-label">Title</mat-label>
   <input
     matInput
+    [formControl]="controlName"
     type="text"
-    value="{{ eventName }}"
-    ngModel="{{ eventName }}"
+    value="eventName"
+    [(ngModel)]="eventName"
     (ngModelChange)="onEventNameChangeFn($event)"
     placeholder="Event Name"
+    required
+    maxlength="16"
   />
+  <mat-hint>Maximum 16 characters</mat-hint>
 </mat-form-field>

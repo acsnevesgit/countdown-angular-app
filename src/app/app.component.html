@@ -1,6 +1,8 @@
 <div class="wrapper" *ngIf="timeRemaining$ | async as t; else loading">
   <div class="event-info">
-    <h1 class="event-name">Time to {{ eventName }}</h1>
+    <h1 class="event-name">
+      <span>Time to </span><span>{{ eventName }}</span>
+    </h1>
     <h2 class="event-countdown">
       <span id="days">{{ t.daysToEvent }}</span> days,
       <span id="hours">{{ t.hoursToEvent }}</span
@@ -15,4 +17,4 @@
   </div>
 </div>
 
-<ng-template #loading> Loading... </ng-template>
+<ng-template #loading><div class="loading">Loading...</div></ng-template>

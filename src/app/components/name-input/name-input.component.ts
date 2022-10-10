@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core'
+import { FormControl, Validators } from '@angular/forms'
 
 import { StorageService } from '../../services/storage.service'
 
@@ -11,6 +12,7 @@ export class NameInputComponent {
   // ------------------------------ Variables ------------------------------
   eventName: string
   startName: string
+  controlName = new FormControl('') //control to immediately listen for, update and validate the state of the form input
 
   @Output() newEventName = new EventEmitter<string>()
 

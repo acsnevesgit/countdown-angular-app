@@ -18,10 +18,9 @@ $countdown-angular-app-theme: mat.define-light-theme((
 @include mat.all-component-themes($countdown-angular-app-theme);
 
 :root {
-  --color-basic: #FFFFFF;
+  --color-background: #1c4668;
   --color-transp: #f0f0f080;
-  --color-background: #02005e;
-  --color-text: #FFDF5C;
+  --color-text: #F7F7F7;
   --color-warning: #ff0000;
 }
 
@@ -48,29 +47,39 @@ body {
   text-align: center;
 }
 
+.mat-calendar {
+  background-color: var(--color-text);
+}
+
+.mat-calendar-body-selected {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
 .mat-input-element {
-    color: var(--color-basic) !important;
-    caret-color: var(--color-basic) !important;
+    color: var(--color-text) !important;
+    caret-color: var(--color-text) !important;
     &::placeholder {
       color: var(--color-transp)  !important;
     }
+    font-size: 22px !important;
+    text-shadow: 1px 1px 0px #4e4e4e,
+    3px 1px 0px #00000026;
 }
 
 .mat-form-field-appearance-outline, .mat-form-field-outline {
-  color: var(--color-basic) !important;
+  color: var(--color-text) !important;
 }
 
 .mat-error {
-  color: var(--color-basic);
+  color: var(--color-text);
   line-height: initial;
   text-align: center ;
 }
 
 // ------------------------------ media queries ------------------------------
-@media screen and (orientation: landscape) {
-
-}
-
-@media screen and (orientation: portrait) {
-
+@media screen and (max-width: 768px) {
+  .mat-input-element {
+    font-size: 18px !important;
+  }
 }

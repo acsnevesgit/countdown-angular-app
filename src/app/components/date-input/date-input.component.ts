@@ -10,11 +10,14 @@ import { StorageService } from '../../services/storage.service'
 export class DateInputComponent {
   // ------------------------------ Variables ------------------------------
   eventDate: string
+  minDate: string
   startDate: Date
 
   @Output() newEventDate = new EventEmitter<string>()
 
   constructor(private storageService: StorageService) {
+    // const currentDate = Date.now()
+    this.minDate = new Date(Date.now() + 3600 * 1000 * 24).toISOString() //set minimum pickable date to current date
     this.startDate = new Date('2023-06-23T22:00:00.000Z') //default event date
 
     if (!this.storageService.getData('eventDate')) {

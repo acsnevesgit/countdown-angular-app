@@ -2,6 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <style>
+      .background--custom {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        overflow: hidden;
+        z-index: -2;
+        top: 0;
+        left: 0;
+      }
+      canvas#canvas {
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: rotate(-12deg) scale(2) translateY(0%);
+        --gradient-color-1: #448332;
+        --gradient-color-2: #5cb1d0;
+        --gradient-color-3: #569b8c;
+        --gradient-color-4: #1c4668;
+        --gradient-speed: 0.000002;
+      }
+    </style>
     <title>countdown-angular-app</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +47,14 @@
     />
   </head>
   <body class="mat-typography">
-    <app-root></app-root>
+    <div class="background--custom">
+      <app-root></app-root>
+      <canvas id="canvas"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
+    <script>
+      var gradient = new Gradient()
+      gradient.initGradient('#canvas')
+    </script>
   </body>
 </html>

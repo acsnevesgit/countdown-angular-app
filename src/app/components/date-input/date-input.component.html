@@ -9,11 +9,14 @@
     matInput
     [matDatepicker]="eventDatePicker"
     disabled
-    value="{{ eventDate }}"
-    ngModel="{{ eventDate }}"
+    value="eventDate"
+    [(ngModel)]="eventDate"
     (ngModelChange)="onEventDateChangeFn($event)"
     placeholder="Event Date"
+    required
+    [min]="minDate"
   />
+  <mat-hint>MM/DD/YYYY</mat-hint>
   <mat-datepicker-toggle
     matSuffix
     [for]="eventDatePicker"

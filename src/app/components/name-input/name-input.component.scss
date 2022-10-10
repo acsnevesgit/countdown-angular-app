@@ -1,16 +1,16 @@
-.input-label {
-  color: var(--color-basic);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22px;
-}
-
 .input-field {
   height: 67px;
   justify-content: space-between;
   width: 32vw;
   min-width: 300px;
+}
+
+.input-label {
+  color: var(--color-text);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 .mat-error {
@@ -20,5 +20,10 @@
 }
 
 .mat-form-field {
-  margin: 1em;
+  margin: 1em 1em 2em;
+}
+
+.mat-hint {
+  color: var(--color-text);
+  font-size: 12px;
 }
